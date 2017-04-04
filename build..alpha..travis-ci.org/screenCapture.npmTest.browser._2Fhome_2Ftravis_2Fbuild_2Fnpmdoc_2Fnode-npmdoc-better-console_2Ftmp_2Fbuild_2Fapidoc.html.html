@@ -1,0 +1,575 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/mohsen1/better-console#readme">better-console (v1.0.0)</a>
+</h1>
+<h4>A better console for Node.js</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.better-console">module better-console</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.assert">
+            function <span class="apidocSignatureSpan">better-console.</span>assert
+            <span class="apidocSignatureSpan">(assertion)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.clear">
+            function <span class="apidocSignatureSpan">better-console.</span>clear
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.count">
+            function <span class="apidocSignatureSpan">better-console.</span>count
+            <span class="apidocSignatureSpan">(toCount)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.debug">
+            function <span class="apidocSignatureSpan">better-console.</span>debug
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.dir">
+            function <span class="apidocSignatureSpan">better-console.</span>dir
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.error">
+            function <span class="apidocSignatureSpan">better-console.</span>error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.info">
+            function <span class="apidocSignatureSpan">better-console.</span>info
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.log">
+            function <span class="apidocSignatureSpan">better-console.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.table">
+            function <span class="apidocSignatureSpan">better-console.</span>table
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.time">
+            function <span class="apidocSignatureSpan">better-console.</span>time
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.timeEnd">
+            function <span class="apidocSignatureSpan">better-console.</span>timeEnd
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.trace">
+            function <span class="apidocSignatureSpan">better-console.</span>trace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.better-console.warn">
+            function <span class="apidocSignatureSpan">better-console.</span>warn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.better-console" id="apidoc.module.better-console">module better-console</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.assert" id="apidoc.element.better-console.assert">
+        function <span class="apidocSignatureSpan">better-console.</span>assert
+        <span class="apidocSignatureSpan">(assertion)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">assert = function (assertion){
+  // todo: for now we are cheating, it's just console.erroring and then
+  // leave console.asset to do it's job. actual todo: print what
+  // console.assert prints just make first line red
+  if (!assertion){
+    logWithColor('red', ['AssertionError: false == true']);
+    console.assert(assertion);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// it Writes red warning and throws assertion error
+assert: function(assertion){
+  // todo: for now we are cheating, it's just console.erroring and then
+  // leave console.asset to do it's job. actual todo: print what
+  // console.assert prints just make first line red
+  if (!assertion){
+    logWithColor('red', ['AssertionError: false == true']);
+    console.<span class="apidocCodeKeywordSpan">assert</span>(assertion);
+  }
+},
+
+// Writes number of times each argument is called with blue color
+count: function(toCount){
+  var toCountString = toCount.toString &amp;&amp; toCount.toString(),
+      log;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.clear" id="apidoc.element.better-console.clear">
+        function <span class="apidocSignatureSpan">better-console.</span>clear
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function (){
+   process.stdout.write('\u001B[2J\u001B[0;0f');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var console = require('./index');
+
+console.log('Something');
+console.<span class="apidocCodeKeywordSpan">clear</span>();
+console.info('Console should be clean now');
+
+console.log('Log');
+console.log('A string');
+console.log('A manipulated string (%s) with number: %d', 'apple', 42);
+console.log(1);
+console.log(true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.count" id="apidoc.element.better-console.count">
+        function <span class="apidocSignatureSpan">better-console.</span>count
+        <span class="apidocSignatureSpan">(toCount)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">count = function (toCount){
+  var toCountString = toCount.toString &amp;&amp; toCount.toString(),
+      log;
+
+  if (countBuffer[toCountString] == null){
+    countBuffer[toCountString] = 0;
+  }else{
+    countBuffer[toCountString] += 1;
+  }
+
+  log = toCountString + ': ' + countBuffer[toCountString];
+  logWithColor('blue', [log]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+console.error(true);
+console.error({ me: 1 });
+console.error([1, 2, 3]);
+console.error('');
+
+
+
+console.<span class="apidocCodeKeywordSpan">count</span>('me');
+console.count('me');
+
+var arr = [
+  ['a', 'b', 'c', 'd'],
+  ['e', 'f', 'h', 'j']
+];
+console.table(arr);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.debug" id="apidoc.element.better-console.debug">
+        function <span class="apidocSignatureSpan">better-console.</span>debug
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function (){
+  console.log.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.dir" id="apidoc.element.better-console.dir">
+        function <span class="apidocSignatureSpan">better-console.</span>dir
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dir = function (){
+  console.dir.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+console.log("This is a log information");
+console.warn("Warning!");
+console.info("Information");
+console.table([ [1,2], [3,4] ]);
+console.time("Timer");
+console.timeEnd("Timer");
+console.<span class="apidocCodeKeywordSpan">dir</span>(myObject);
+
+```
+
+## Methods
+
+### `console.log`, `console.warn`, `console.error`, `console.info`, `console.debug`, `console.dir`, `console.trace`
+These methods work exactly same as native console methods but with colors for `warn`, `info` or `error`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.error" id="apidoc.element.better-console.error">
+        function <span class="apidocSignatureSpan">better-console.</span>error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (){
+  logWithColor('red', arguments, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var util = require('util');
+var logTable = require('./log_table');
+var countBuffer = {};
+
+function logWithColor(color, args, isError){
+  var log = util.format.apply(this, args);
+  if(isError)
+    console.<span class="apidocCodeKeywordSpan">error</span>(chalk[color](log));
+  else
+    console.log(chalk[color](log));
+}
+
+
+module.exports = {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.info" id="apidoc.element.better-console.info">
+        function <span class="apidocSignatureSpan">better-console.</span>info
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function (){
+  logWithColor('blue', arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+You can override `console` object itself or assign better console to another variable. It's completely safe to override the
+ native console object because better console calls native console methods for methods that are already available in it.
+
+```
+var console = require('better-console');
+
+console.log("This is a log information");
+console.warn("Warning!");
+console.<span class="apidocCodeKeywordSpan">info</span>("Information");
+console.table([ [1,2], [3,4] ]);
+console.time("Timer");
+console.timeEnd("Timer");
+console.dir(myObject);
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.log" id="apidoc.element.better-console.log">
+        function <span class="apidocSignatureSpan">better-console.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function (){
+  console.log.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## How to use it
+
+You can override `console` object itself or assign better console to another variable. It's completely safe to override the
+ native console object because better console calls native console methods for methods that are already available in it.
+
+```
+var console = require('better-console');
+
+console.<span class="apidocCodeKeywordSpan">log</span>("This is a log information");
+console.warn("Warning!");
+console.info("Information");
+console.table([ [1,2], [3,4] ]);
+console.time("Timer");
+console.timeEnd("Timer");
+console.dir(myObject);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.table" id="apidoc.element.better-console.table">
+        function <span class="apidocSignatureSpan">better-console.</span>table
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">table = function (){
+  logTable.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```
+var console = require('better-console');
+
+console.log("This is a log information");
+console.warn("Warning!");
+console.info("Information");
+console.<span class="apidocCodeKeywordSpan">table</span>([ [1,2], [3,4] ]);
+console.time("Timer");
+console.timeEnd("Timer");
+console.dir(myObject);
+
+```
+
+## Methods
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.time" id="apidoc.element.better-console.time">
+        function <span class="apidocSignatureSpan">better-console.</span>time
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">time = function (){
+  console.time.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+var console = require('better-console');
+
+console.log("This is a log information");
+console.warn("Warning!");
+console.info("Information");
+console.table([ [1,2], [3,4] ]);
+console.<span class="apidocCodeKeywordSpan">time</span>("Timer");
+console.timeEnd("Timer");
+console.dir(myObject);
+
+```
+
+## Methods
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.timeEnd" id="apidoc.element.better-console.timeEnd">
+        function <span class="apidocSignatureSpan">better-console.</span>timeEnd
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">timeEnd = function (){
+  console.timeEnd.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var console = require('better-console');
+
+console.log("This is a log information");
+console.warn("Warning!");
+console.info("Information");
+console.table([ [1,2], [3,4] ]);
+console.time("Timer");
+console.<span class="apidocCodeKeywordSpan">timeEnd</span>("Timer");
+console.dir(myObject);
+
+```
+
+## Methods
+
+### `console.log`, `console.warn`, `console.error`, `console.info`, `console.debug`, `console.dir`, `console.trace`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.trace" id="apidoc.element.better-console.trace">
+        function <span class="apidocSignatureSpan">better-console.</span>trace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trace = function (){
+  console.trace.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.better-console.warn" id="apidoc.element.better-console.warn">
+        function <span class="apidocSignatureSpan">better-console.</span>warn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function (){
+  logWithColor('yellow', arguments, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+You can override `console` object itself or assign better console to another variable. It's completely safe to override the
+ native console object because better console calls native console methods for methods that are already available in it.
+
+```
+var console = require('better-console');
+
+console.log("This is a log information");
+console.<span class="apidocCodeKeywordSpan">warn</span>("Warning!");
+console.info("Information");
+console.table([ [1,2], [3,4] ]);
+console.time("Timer");
+console.timeEnd("Timer");
+console.dir(myObject);
+
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
