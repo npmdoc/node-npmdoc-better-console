@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/mohsen1/better-console#readme"
-
-    >better-console (v1.0.0)</a>
+    <a href="https://github.com/mohsen1/better-console#readme">better-console (v1.0.0)</a>
 </h1>
 <h4>A better console for Node.js</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.better-console">module better-console</a><ol>
 
@@ -363,29 +356,29 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">assert = function (assertion){
-  // todo: for now we are cheating, it&#x27;s just console.erroring and then
-  // leave console.asset to do it&#x27;s job. actual todo: print what
+  // todo: for now we are cheating, it's just console.erroring and then
+  // leave console.asset to do it's job. actual todo: print what
   // console.assert prints just make first line red
   if (!assertion){
-    logWithColor(&#x27;red&#x27;, [&#x27;AssertionError: false == true&#x27;]);
+    logWithColor('red', ['AssertionError: false == true']);
     console.assert(assertion);
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 // it Writes red warning and throws assertion error
 assert: function(assertion){
-  // todo: for now we are cheating, it&#x27;s just console.erroring and then
-  // leave console.asset to do it&#x27;s job. actual todo: print what
+  // todo: for now we are cheating, it's just console.erroring and then
+  // leave console.asset to do it's job. actual todo: print what
   // console.assert prints just make first line red
   if (!assertion){
-    logWithColor(&#x27;red&#x27;, [&#x27;AssertionError: false == true&#x27;]);
+    logWithColor('red', ['AssertionError: false == true']);
     console.<span class="apidocCodeKeywordSpan">assert</span>(assertion);
   }
 },
 
 // Writes number of times each argument is called with blue color
 count: function(toCount){
-  var toCountString = toCount.toString &#x26;&#x26; toCount.toString(),
+  var toCountString = toCount.toString &amp;&amp; toCount.toString(),
       log;
 ...</pre></li>
     </ul>
@@ -400,22 +393,22 @@ count: function(toCount){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">clear = function (){
-   process.stdout.write(&#x27;\u001B[2J\u001B[0;0f&#x27;);
+   process.stdout.write('\u001B[2J\u001B[0;0f');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
 
 
 
-var console = require(&#x27;./index&#x27;);
+var console = require('./index');
 
-console.log(&#x27;Something&#x27;);
+console.log('Something');
 console.<span class="apidocCodeKeywordSpan">clear</span>();
-console.info(&#x27;Console should be clean now&#x27;);
+console.info('Console should be clean now');
 
-console.log(&#x27;Log&#x27;);
-console.log(&#x27;A string&#x27;);
-console.log(&#x27;A manipulated string (%s) with number: %d&#x27;, &#x27;apple&#x27;, 42);
+console.log('Log');
+console.log('A string');
+console.log('A manipulated string (%s) with number: %d', 'apple', 42);
 console.log(1);
 console.log(true);
 ...</pre></li>
@@ -431,7 +424,7 @@ console.log(true);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">count = function (toCount){
-  var toCountString = toCount.toString &#x26;&#x26; toCount.toString(),
+  var toCountString = toCount.toString &amp;&amp; toCount.toString(),
       log;
 
   if (countBuffer[toCountString] == null){
@@ -440,23 +433,23 @@ console.log(true);
     countBuffer[toCountString] += 1;
   }
 
-  log = toCountString + &#x27;: &#x27; + countBuffer[toCountString];
-  logWithColor(&#x27;blue&#x27;, [log]);
+  log = toCountString + ': ' + countBuffer[toCountString];
+  logWithColor('blue', [log]);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 console.error(true);
 console.error({ me: 1 });
 console.error([1, 2, 3]);
-console.error(&#x27;&#x27;);
+console.error('');
 
 
 
-console.<span class="apidocCodeKeywordSpan">count</span>(&#x27;me&#x27;);
-console.count(&#x27;me&#x27;);
+console.<span class="apidocCodeKeywordSpan">count</span>('me');
+console.count('me');
 
 var arr = [
-  [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;],
-  [&#x27;e&#x27;, &#x27;f&#x27;, &#x27;h&#x27;, &#x27;j&#x27;]
+  ['a', 'b', 'c', 'd'],
+  ['e', 'f', 'h', 'j']
 ];
 console.table(arr);
 ...</pre></li>
@@ -491,12 +484,12 @@ console.table(arr);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-console.log(&#x22;This is a log information&#x22;);
-console.warn(&#x22;Warning!&#x22;);
-console.info(&#x22;Information&#x22;);
+console.log("This is a log information");
+console.warn("Warning!");
+console.info("Information");
 console.table([ [1,2], [3,4] ]);
-console.time(&#x22;Timer&#x22;);
-console.timeEnd(&#x22;Timer&#x22;);
+console.time("Timer");
+console.timeEnd("Timer");
 console.<span class="apidocCodeKeywordSpan">dir</span>(myObject);
 
 ```
@@ -518,11 +511,11 @@ These methods work exactly same as native console methods but with colors for `w
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">error = function (){
-  logWithColor(&#x27;red&#x27;, arguments, true);
+  logWithColor('red', arguments, true);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var util = require(&#x27;util&#x27;);
-var logTable = require(&#x27;./log_table&#x27;);
+var util = require('util');
+var logTable = require('./log_table');
 var countBuffer = {};
 
 function logWithColor(color, args, isError){
@@ -548,21 +541,21 @@ module.exports = {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">info = function (){
-  logWithColor(&#x27;blue&#x27;, arguments);
+  logWithColor('blue', arguments);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-You can override `console` object itself or assign better console to another variable. It&#x27;s completely safe to override the
+You can override `console` object itself or assign better console to another variable. It's completely safe to override the
  native console object because better console calls native console methods for methods that are already available in it.
 
 ```
-var console = require(&#x27;better-console&#x27;);
+var console = require('better-console');
 
-console.log(&#x22;This is a log information&#x22;);
-console.warn(&#x22;Warning!&#x22;);
-console.<span class="apidocCodeKeywordSpan">info</span>(&#x22;Information&#x22;);
+console.log("This is a log information");
+console.warn("Warning!");
+console.<span class="apidocCodeKeywordSpan">info</span>("Information");
 console.table([ [1,2], [3,4] ]);
-console.time(&#x22;Timer&#x22;);
-console.timeEnd(&#x22;Timer&#x22;);
+console.time("Timer");
+console.timeEnd("Timer");
 console.dir(myObject);
 
 ```
@@ -584,18 +577,18 @@ console.dir(myObject);
     <li>example usage<pre class="apidocCodePre">...
 ## How to use it
 
-You can override `console` object itself or assign better console to another variable. It&#x27;s completely safe to override the
+You can override `console` object itself or assign better console to another variable. It's completely safe to override the
  native console object because better console calls native console methods for methods that are already available in it.
 
 ```
-var console = require(&#x27;better-console&#x27;);
+var console = require('better-console');
 
-console.<span class="apidocCodeKeywordSpan">log</span>(&#x22;This is a log information&#x22;);
-console.warn(&#x22;Warning!&#x22;);
-console.info(&#x22;Information&#x22;);
+console.<span class="apidocCodeKeywordSpan">log</span>("This is a log information");
+console.warn("Warning!");
+console.info("Information");
 console.table([ [1,2], [3,4] ]);
-console.time(&#x22;Timer&#x22;);
-console.timeEnd(&#x22;Timer&#x22;);
+console.time("Timer");
+console.timeEnd("Timer");
 console.dir(myObject);
 ...</pre></li>
     </ul>
@@ -615,14 +608,14 @@ console.dir(myObject);
     <li>example usage<pre class="apidocCodePre">...
 
 ```
-var console = require(&#x27;better-console&#x27;);
+var console = require('better-console');
 
-console.log(&#x22;This is a log information&#x22;);
-console.warn(&#x22;Warning!&#x22;);
-console.info(&#x22;Information&#x22;);
+console.log("This is a log information");
+console.warn("Warning!");
+console.info("Information");
 console.<span class="apidocCodeKeywordSpan">table</span>([ [1,2], [3,4] ]);
-console.time(&#x22;Timer&#x22;);
-console.timeEnd(&#x22;Timer&#x22;);
+console.time("Timer");
+console.timeEnd("Timer");
 console.dir(myObject);
 
 ```
@@ -645,14 +638,14 @@ console.dir(myObject);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```
-var console = require(&#x27;better-console&#x27;);
+var console = require('better-console');
 
-console.log(&#x22;This is a log information&#x22;);
-console.warn(&#x22;Warning!&#x22;);
-console.info(&#x22;Information&#x22;);
+console.log("This is a log information");
+console.warn("Warning!");
+console.info("Information");
 console.table([ [1,2], [3,4] ]);
-console.<span class="apidocCodeKeywordSpan">time</span>(&#x22;Timer&#x22;);
-console.timeEnd(&#x22;Timer&#x22;);
+console.<span class="apidocCodeKeywordSpan">time</span>("Timer");
+console.timeEnd("Timer");
 console.dir(myObject);
 
 ```
@@ -674,14 +667,14 @@ console.dir(myObject);
   console.timeEnd.apply(this, arguments);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var console = require(&#x27;better-console&#x27;);
+var console = require('better-console');
 
-console.log(&#x22;This is a log information&#x22;);
-console.warn(&#x22;Warning!&#x22;);
-console.info(&#x22;Information&#x22;);
+console.log("This is a log information");
+console.warn("Warning!");
+console.info("Information");
 console.table([ [1,2], [3,4] ]);
-console.time(&#x22;Timer&#x22;);
-console.<span class="apidocCodeKeywordSpan">timeEnd</span>(&#x22;Timer&#x22;);
+console.time("Timer");
+console.<span class="apidocCodeKeywordSpan">timeEnd</span>("Timer");
 console.dir(myObject);
 
 ```
@@ -717,22 +710,22 @@ console.dir(myObject);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">warn = function (){
-  logWithColor(&#x27;yellow&#x27;, arguments, true);
+  logWithColor('yellow', arguments, true);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-You can override `console` object itself or assign better console to another variable. It&#x27;s completely safe to override the
+You can override `console` object itself or assign better console to another variable. It's completely safe to override the
  native console object because better console calls native console methods for methods that are already available in it.
 
 ```
-var console = require(&#x27;better-console&#x27;);
+var console = require('better-console');
 
-console.log(&#x22;This is a log information&#x22;);
-console.<span class="apidocCodeKeywordSpan">warn</span>(&#x22;Warning!&#x22;);
-console.info(&#x22;Information&#x22;);
+console.log("This is a log information");
+console.<span class="apidocCodeKeywordSpan">warn</span>("Warning!");
+console.info("Information");
 console.table([ [1,2], [3,4] ]);
-console.time(&#x22;Timer&#x22;);
-console.timeEnd(&#x22;Timer&#x22;);
+console.time("Timer");
+console.timeEnd("Timer");
 console.dir(myObject);
 
 ```
@@ -754,29 +747,29 @@ console.dir(myObject);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">assert = function (assertion){
-  // todo: for now we are cheating, it&#x27;s just console.erroring and then
-  // leave console.asset to do it&#x27;s job. actual todo: print what
+  // todo: for now we are cheating, it's just console.erroring and then
+  // leave console.asset to do it's job. actual todo: print what
   // console.assert prints just make first line red
   if (!assertion){
-    logWithColor(&#x27;red&#x27;, [&#x27;AssertionError: false == true&#x27;]);
+    logWithColor('red', ['AssertionError: false == true']);
     console.assert(assertion);
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 // it Writes red warning and throws assertion error
 assert: function(assertion){
-  // todo: for now we are cheating, it&#x27;s just console.erroring and then
-  // leave console.asset to do it&#x27;s job. actual todo: print what
+  // todo: for now we are cheating, it's just console.erroring and then
+  // leave console.asset to do it's job. actual todo: print what
   // console.assert prints just make first line red
   if (!assertion){
-    logWithColor(&#x27;red&#x27;, [&#x27;AssertionError: false == true&#x27;]);
+    logWithColor('red', ['AssertionError: false == true']);
     console.<span class="apidocCodeKeywordSpan">assert</span>(assertion);
   }
 },
 
 // Writes number of times each argument is called with blue color
 count: function(toCount){
-  var toCountString = toCount.toString &#x26;&#x26; toCount.toString(),
+  var toCountString = toCount.toString &amp;&amp; toCount.toString(),
       log;
 ...</pre></li>
     </ul>
@@ -796,22 +789,22 @@ count: function(toCount){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">clear = function (){
-   process.stdout.write(&#x27;\u001B[2J\u001B[0;0f&#x27;);
+   process.stdout.write('\u001B[2J\u001B[0;0f');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
 
 
 
-var console = require(&#x27;./index&#x27;);
+var console = require('./index');
 
-console.log(&#x27;Something&#x27;);
+console.log('Something');
 console.<span class="apidocCodeKeywordSpan">clear</span>();
-console.info(&#x27;Console should be clean now&#x27;);
+console.info('Console should be clean now');
 
-console.log(&#x27;Log&#x27;);
-console.log(&#x27;A string&#x27;);
-console.log(&#x27;A manipulated string (%s) with number: %d&#x27;, &#x27;apple&#x27;, 42);
+console.log('Log');
+console.log('A string');
+console.log('A manipulated string (%s) with number: %d', 'apple', 42);
 console.log(1);
 console.log(true);
 ...</pre></li>
@@ -832,7 +825,7 @@ console.log(true);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">count = function (toCount){
-  var toCountString = toCount.toString &#x26;&#x26; toCount.toString(),
+  var toCountString = toCount.toString &amp;&amp; toCount.toString(),
       log;
 
   if (countBuffer[toCountString] == null){
@@ -841,23 +834,23 @@ console.log(true);
     countBuffer[toCountString] += 1;
   }
 
-  log = toCountString + &#x27;: &#x27; + countBuffer[toCountString];
-  logWithColor(&#x27;blue&#x27;, [log]);
+  log = toCountString + ': ' + countBuffer[toCountString];
+  logWithColor('blue', [log]);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 console.error(true);
 console.error({ me: 1 });
 console.error([1, 2, 3]);
-console.error(&#x27;&#x27;);
+console.error('');
 
 
 
-console.<span class="apidocCodeKeywordSpan">count</span>(&#x27;me&#x27;);
-console.count(&#x27;me&#x27;);
+console.<span class="apidocCodeKeywordSpan">count</span>('me');
+console.count('me');
 
 var arr = [
-  [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;],
-  [&#x27;e&#x27;, &#x27;f&#x27;, &#x27;h&#x27;, &#x27;j&#x27;]
+  ['a', 'b', 'c', 'd'],
+  ['e', 'f', 'h', 'j']
 ];
 console.table(arr);
 ...</pre></li>
@@ -902,12 +895,12 @@ console.table(arr);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-console.log(&#x22;This is a log information&#x22;);
-console.warn(&#x22;Warning!&#x22;);
-console.info(&#x22;Information&#x22;);
+console.log("This is a log information");
+console.warn("Warning!");
+console.info("Information");
 console.table([ [1,2], [3,4] ]);
-console.time(&#x22;Timer&#x22;);
-console.timeEnd(&#x22;Timer&#x22;);
+console.time("Timer");
+console.timeEnd("Timer");
 console.<span class="apidocCodeKeywordSpan">dir</span>(myObject);
 
 ```
@@ -934,11 +927,11 @@ These methods work exactly same as native console methods but with colors for `w
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">error = function (){
-  logWithColor(&#x27;red&#x27;, arguments, true);
+  logWithColor('red', arguments, true);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var util = require(&#x27;util&#x27;);
-var logTable = require(&#x27;./log_table&#x27;);
+var util = require('util');
+var logTable = require('./log_table');
 var countBuffer = {};
 
 function logWithColor(color, args, isError){
@@ -969,21 +962,21 @@ module.exports = {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">info = function (){
-  logWithColor(&#x27;blue&#x27;, arguments);
+  logWithColor('blue', arguments);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-You can override `console` object itself or assign better console to another variable. It&#x27;s completely safe to override the
+You can override `console` object itself or assign better console to another variable. It's completely safe to override the
  native console object because better console calls native console methods for methods that are already available in it.
 
 ```
-var console = require(&#x27;better-console&#x27;);
+var console = require('better-console');
 
-console.log(&#x22;This is a log information&#x22;);
-console.warn(&#x22;Warning!&#x22;);
-console.<span class="apidocCodeKeywordSpan">info</span>(&#x22;Information&#x22;);
+console.log("This is a log information");
+console.warn("Warning!");
+console.<span class="apidocCodeKeywordSpan">info</span>("Information");
 console.table([ [1,2], [3,4] ]);
-console.time(&#x22;Timer&#x22;);
-console.timeEnd(&#x22;Timer&#x22;);
+console.time("Timer");
+console.timeEnd("Timer");
 console.dir(myObject);
 
 ```
@@ -1010,18 +1003,18 @@ console.dir(myObject);
     <li>example usage<pre class="apidocCodePre">...
 ## How to use it
 
-You can override `console` object itself or assign better console to another variable. It&#x27;s completely safe to override the
+You can override `console` object itself or assign better console to another variable. It's completely safe to override the
  native console object because better console calls native console methods for methods that are already available in it.
 
 ```
-var console = require(&#x27;better-console&#x27;);
+var console = require('better-console');
 
-console.<span class="apidocCodeKeywordSpan">log</span>(&#x22;This is a log information&#x22;);
-console.warn(&#x22;Warning!&#x22;);
-console.info(&#x22;Information&#x22;);
+console.<span class="apidocCodeKeywordSpan">log</span>("This is a log information");
+console.warn("Warning!");
+console.info("Information");
 console.table([ [1,2], [3,4] ]);
-console.time(&#x22;Timer&#x22;);
-console.timeEnd(&#x22;Timer&#x22;);
+console.time("Timer");
+console.timeEnd("Timer");
 console.dir(myObject);
 ...</pre></li>
     </ul>
@@ -1046,14 +1039,14 @@ console.dir(myObject);
     <li>example usage<pre class="apidocCodePre">...
 
 ```
-var console = require(&#x27;better-console&#x27;);
+var console = require('better-console');
 
-console.log(&#x22;This is a log information&#x22;);
-console.warn(&#x22;Warning!&#x22;);
-console.info(&#x22;Information&#x22;);
+console.log("This is a log information");
+console.warn("Warning!");
+console.info("Information");
 console.<span class="apidocCodeKeywordSpan">table</span>([ [1,2], [3,4] ]);
-console.time(&#x22;Timer&#x22;);
-console.timeEnd(&#x22;Timer&#x22;);
+console.time("Timer");
+console.timeEnd("Timer");
 console.dir(myObject);
 
 ```
@@ -1081,14 +1074,14 @@ console.dir(myObject);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```
-var console = require(&#x27;better-console&#x27;);
+var console = require('better-console');
 
-console.log(&#x22;This is a log information&#x22;);
-console.warn(&#x22;Warning!&#x22;);
-console.info(&#x22;Information&#x22;);
+console.log("This is a log information");
+console.warn("Warning!");
+console.info("Information");
 console.table([ [1,2], [3,4] ]);
-console.<span class="apidocCodeKeywordSpan">time</span>(&#x22;Timer&#x22;);
-console.timeEnd(&#x22;Timer&#x22;);
+console.<span class="apidocCodeKeywordSpan">time</span>("Timer");
+console.timeEnd("Timer");
 console.dir(myObject);
 
 ```
@@ -1115,14 +1108,14 @@ console.dir(myObject);
   console.timeEnd.apply(this, arguments);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var console = require(&#x27;better-console&#x27;);
+var console = require('better-console');
 
-console.log(&#x22;This is a log information&#x22;);
-console.warn(&#x22;Warning!&#x22;);
-console.info(&#x22;Information&#x22;);
+console.log("This is a log information");
+console.warn("Warning!");
+console.info("Information");
 console.table([ [1,2], [3,4] ]);
-console.time(&#x22;Timer&#x22;);
-console.<span class="apidocCodeKeywordSpan">timeEnd</span>(&#x22;Timer&#x22;);
+console.time("Timer");
+console.<span class="apidocCodeKeywordSpan">timeEnd</span>("Timer");
 console.dir(myObject);
 
 ```
@@ -1168,22 +1161,22 @@ console.dir(myObject);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">warn = function (){
-  logWithColor(&#x27;yellow&#x27;, arguments, true);
+  logWithColor('yellow', arguments, true);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-You can override `console` object itself or assign better console to another variable. It&#x27;s completely safe to override the
+You can override `console` object itself or assign better console to another variable. It's completely safe to override the
  native console object because better console calls native console methods for methods that are already available in it.
 
 ```
-var console = require(&#x27;better-console&#x27;);
+var console = require('better-console');
 
-console.log(&#x22;This is a log information&#x22;);
-console.<span class="apidocCodeKeywordSpan">warn</span>(&#x22;Warning!&#x22;);
-console.info(&#x22;Information&#x22;);
+console.log("This is a log information");
+console.<span class="apidocCodeKeywordSpan">warn</span>("Warning!");
+console.info("Information");
 console.table([ [1,2], [3,4] ]);
-console.time(&#x22;Timer&#x22;);
-console.timeEnd(&#x22;Timer&#x22;);
+console.time("Timer");
+console.timeEnd("Timer");
 console.dir(myObject);
 
 ```
@@ -1199,3 +1192,4 @@ console.dir(myObject);
     ]
 </div>
 </div>
+</body></html>
