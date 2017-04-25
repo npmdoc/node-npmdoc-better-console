@@ -1,6 +1,6 @@
 # npmdoc-better-console
 
-#### api documentation for  [better-console (v1.0.0)](https://github.com/mohsen1/better-console#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-better-console.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-better-console) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-better-console.svg)](https://travis-ci.org/npmdoc/node-npmdoc-better-console)
+#### basic api documentation for  [better-console (v1.0.0)](https://github.com/mohsen1/better-console#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-better-console.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-better-console) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-better-console.svg)](https://travis-ci.org/npmdoc/node-npmdoc-better-console)
 
 #### A better console for Node.js
 
@@ -59,7 +59,8 @@
     "scripts": {
         "test": "node test.js"
     },
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "bin": {}
 }
 ```
 
